@@ -30,4 +30,24 @@
    - Sistem značk (npr. "Zanesljiv učitelj")
    - Možnost direktnega klepeta znotraj aplikacije
 
+# Prednosti in slabosti projekta "SkillSwap"
+
+## Prednosti
+
+- **Enostavna izmenjava veščin**: Uporabniki lahko hitro najdejo partnerje za učenje na podlagi svojih veščin in želja.
+- **Prilagodljivo iskanje**: Napreden sistem iskanja in filtriranja uporabnikov po različnih kriterijih, kot so veščine, jezik, lokacija in posebne zahteve.
+- **Povezovanje uporabnikov**: Preko kontaktnih podatkov (Discord username) se lahko uporabniki hitro povežejo in začnejo z izmenjavo veščin.
+- **Ocene in pregledi uporabnikov**: Sistem ocen omogoča večjo varnost in zaupanje med uporabniki, saj lahko preverijo izkušnje drugih.
+- **Enostavno shranjevanje podatkov**: Uporaba **JSON datotek** omogoča preprost in pregleden način shranjevanja uporabniških podatkov.
+- **Nadgradnje**: Možnost kasnejših nadgradenj, kot so sistem značk in direktni klepet znotraj aplikacije.
+
+## Slabosti
+
+- **Omejena funkcionalnost**: Trenutna različica omogoča le osnovne funkcije, kot so registracija in iskanje uporabnikov, brez naprednejših možnosti, kot so video klici ali integracija z drugimi platformami.
+- **Pomanjkanje napredne varnosti**: Ker se podatki trenutno shranjujejo v **JSON datotekah**, ni vgrajenega naprednega sistema za zaščito in šifriranje podatkov, kar bi lahko predstavljalo varnostno tveganje.
+- **Nizka prilagodljivost v uporabniškem vmesniku**: Trenutno aplikacija ponuja osnovni uporabniški vmesnik, ki bi lahko bil izboljšan z bolj naprednim dizajnom ali odzivnimi funkcijami za različne naprave.
+- **Omejena uporabniška baza**: Ker je aplikacija odvisna od uporabnikov, ki jo aktivno uporabljajo, lahko začetna faza razvoja pripelje do omejene baze uporabnikov, kar zmanjša možnosti za iskanje partnerjev.
+- **Odvisnost od zunanjih orodij**: Povezovanje preko Discorda ali drugih zunanjih platform pomeni, da so uporabniki odvisni od teh orodij za komunikacijo, kar lahko omeji fleksibilnost aplikacije.
+
+
 Aplikacija omogoča enostavno iskanje in izmenjavo veščin ter kasnejše nadgradnje za boljšo izkušnjo uporabnikov.
