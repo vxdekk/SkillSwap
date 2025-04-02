@@ -2,9 +2,7 @@
 
 **SkillSwap** je spletna aplikacija za izmenjavo veščin, ki omogoča uporabnikom, da se povežejo in učijo drug od drugega. Aplikacija bo uporabljala naslednje tehnologije:
 
-- **Python (Flask)** za strežnik
-- **HTML, CSS, JavaScript** za uporabniški vmesnik
-- **JSON datoteke** za shranjevanje podatkov
+
 
 ## Koraki razvoja
 
@@ -28,7 +26,7 @@
 6. **Dodatne funkcije (nadgradnje)**  
    - Ocene in pregledi uporabnikov
    - Sistem značk (npr. "Zanesljiv učitelj")
-   - Možnost direktnega klepeta znotraj aplikacije
+   
 
 # Prednosti in slabosti projekta "SkillSwap"
 
