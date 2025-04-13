@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import json
-
+#sigma
 app = Flask(__name__)
 
 @app.route('/')
@@ -72,6 +72,15 @@ def iskanje():
         return render_template('search.html', users=matching_users, skills=skills)
 
     return render_template('search.html', users=None, skills=skills)
+
+@app.route('/prijava', methods=['GET', 'POST'])
+def prijava():
+    if request.method == 'POST':
+        vneseno_ime = request.form['ime']
+        vnesen_discord = request.form['discord']
+
+        
+
 
 
 if __name__ == '__main__':
