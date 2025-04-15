@@ -73,14 +73,40 @@ def iskanje():
 
     return render_template('search.html', users=None, skills=skills)
 
-@app.route('/prijava', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def prijava():
     if request.method == 'POST':
         vneseno_ime = request.form['ime']
         vnesen_discord = request.form['discord']
 
-        
+        try:
+            with open('users.json', 'r') as f:
+                uporabniki = json.load(f)
+        except FileNotFoundError:
+            uporabniki = []
 
+        for u in uporabniki:
+            if u['ime'] == vneseno_ime and u['discord'] == vnesen_discord:
+                return redirect('/profil/' + vneseno_ime)
+
+        return "Uporabnik ni najden ali napačni podatki", 401
+
+    return render_template('login.html')
+
+
+@app.route('/profil/<ime>')
+def profil(ime):
+    try:
+        with open('users.json', 'r') as f:
+            uporabniki = json.load(f)
+    except FileNotFoundError:
+        uporabniki = []
+
+    for u in uporabniki:
+        if u['ime'] == ime:
+            return render_template('profile.html', uporabnik=u)
+
+    return "Uporabnik ni najden", 404
 
 
 if __name__ == '__main__':
