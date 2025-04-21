@@ -3,17 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <title>Prijava - SkillSwap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input[type="text"], .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5c6bc0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #3f4c93;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Prijava</h1>
-    <form method="POST">
-        <label>Ime:</label><br>
-        <input type="text" name="ime" required><br>
+    <div class="container">
+        <h1>Prijava</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="ime">Ime:</label>
+                <input type="text" name="ime" required>
+            </div>
 
-        <label>Discord uporabniško ime:</label><br>
-        <input type="text" name="discord" required><br><br>
+            <div class="form-group">
+                <label for="geslo">Geslo:</label>
+                <input type="password" name="geslo" required>
+            </div>
 
-        <button type="submit">Prijavi se</button>
-    </form>
+            <div class="form-group">
+                <label for="discord">Discord uporabniško ime:</label>
+                <input type="text" name="discord" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Prijavi se</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

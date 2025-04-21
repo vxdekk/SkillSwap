@@ -1,6 +1,6 @@
 [
     {
-        "name": "vxdekk",
+        "ime": "vxdekk",
         "can_do": "Kitaro",
         "want_to_learn": "Ples",
         "discord": "vxdekk"
@@ -82,5 +82,42 @@
         "znam": "Risanje",
         "zelim_se_nauciti": "Fortnite",
         "discord": "vxdekk"
+    },
+    {
+        "ime": "matija",
+        "znam": "Kitaro",
+        "zelim_se_nauciti": "Risanje",
+        "discord": "erzen"
+    },
+    {
+        "ime": "Vid",
+        "znam": "Kitaro",
+        "zelim_se_nauciti": "Ples",
+        "discord": "x"
+    },
+    {
+        "ime": "w",
+        "znam": "Programiranje",
+        "zelim_se_nauciti": "ples",
+        "discord": "w"
+    },
+    {
+        "ime": "Ana",
+        "znam": "Programiranje",
+        "zelim_se_nauciti": "Fotografija",
+        "discord": "ana#1234"
+    },
+    {
+        "ime": "Ana",
+        "znam": "Roblox",
+        "zelim_se_nauciti": "Risanje",
+        "discord": "ana#1234"
+    },
+    {
+        "ime": "Vid",
+        "znam": "Kitaro",
+        "zelim_se_nauciti": "Valorant",
+        "discord": "w",
+        "password": "nevem123"
     }
 ]

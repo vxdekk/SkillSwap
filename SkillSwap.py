@@ -36,7 +36,9 @@ def registracija():
             "ime": request.form['name'],
             "znam": znam,
             "zelim_se_nauciti": zelim_se_nauciti,
-            "discord": request.form['discord']
+            "discord": request.form['discord'],
+            "password": request.form['geslo']
+
         }
 
         try:
@@ -78,6 +80,7 @@ def prijava():
     if request.method == 'POST':
         vneseno_ime = request.form['ime']
         vnesen_discord = request.form['discord']
+        vneseno_geslo = request.form['geslo']
 
         try:
             with open('users.json', 'r') as f:
@@ -86,7 +89,7 @@ def prijava():
             uporabniki = []
 
         for u in uporabniki:
-            if u['ime'] == vneseno_ime and u['discord'] == vnesen_discord:
+            if u['ime'] == vneseno_ime and u['discord'] == vnesen_discord and u['password'] == vneseno_geslo:
                 return redirect('/profil/' + vneseno_ime)
 
         return "Uporabnik ni najden ali napačni podatki", 401
