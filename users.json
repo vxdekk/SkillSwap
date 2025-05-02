@@ -1,123 +1,146 @@
 [
     {
         "ime": "vxdekk",
-        "can_do": "Kitaro",
-        "want_to_learn": "Ples",
+        "password": "mojegeslo123",
+        "znam": "Kitaro",
+        "zelim_se_nauciti": "Ples",
         "discord": "vxdekk"
     },
     {
         "ime": "da",
+        "password": "mojegeslo123",
         "znam": "Fotografija",
         "zelim_se_nauciti": "Jeziki",
         "discord": "vda"
     },
     {
         "ime": "dada",
+        "password": "mojegeslo123",
         "znam": "Fotografija",
         "zelim_se_nauciti": "Kitaro",
         "discord": "vxd"
     },
     {
         "ime": "Vid",
+        "password": "mojegeslo123",
         "znam": "Fotografija",
         "zelim_se_nauciti": "Risanje",
         "discord": "vxdekk"
     },
     {
         "ime": "Vid",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "sah",
         "discord": "d"
     },
     {
         "ime": "dada",
+        "password": "mojegeslo123",
         "znam": "Fortnite",
         "zelim_se_nauciti": "Roblox",
         "discord": "a delaaa"
     },
     {
         "ime": "Luka",
+        "password": "mojegeslo123",
         "znam": "Roblox",
         "zelim_se_nauciti": "Valorant",
         "discord": "drekcpekc"
     },
     {
         "ime": "s",
+        "password": "mojegeslo123",
         "znam": "",
         "zelim_se_nauciti": "",
         "discord": "s"
     },
     {
         "ime": "s",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "ples",
         "discord": "sss"
     },
     {
         "ime": "sss",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "zongliranje",
         "discord": "sss"
     },
     {
         "ime": "dadada",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "Jeziki",
         "discord": "dada"
     },
     {
         "ime": "dada",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "Kuhanje",
         "discord": "dadada"
     },
     {
         "ime": "zorko",
+        "password": "mojegeslo123",
         "znam": "Valorant",
         "zelim_se_nauciti": "Kitaro",
         "discord": "zorko00"
     },
     {
         "ime": "Vid",
+        "password": "mojegeslo123",
         "znam": "Risanje",
         "zelim_se_nauciti": "Fortnite",
         "discord": "vxdekk"
     },
     {
         "ime": "matija",
+        "password": "mojegeslo123",
         "znam": "Kitaro",
         "zelim_se_nauciti": "Risanje",
         "discord": "erzen"
     },
     {
         "ime": "Vid",
+        "password": "mojegeslo123",
         "znam": "Kitaro",
         "zelim_se_nauciti": "Ples",
         "discord": "x"
     },
     {
         "ime": "w",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "ples",
         "discord": "w"
     },
     {
         "ime": "Ana",
+        "password": "mojegeslo123",
         "znam": "Programiranje",
         "zelim_se_nauciti": "Fotografija",
         "discord": "ana#1234"
+        
     },
     {
         "ime": "Ana",
+        "password": "mojegeslo123",
         "znam": "Roblox",
         "zelim_se_nauciti": "Risanje",
         "discord": "ana#1234"
+        
     },
     {
         "ime": "Vid",
+        "password": "nevem123",
         "znam": "Kitaro",
         "zelim_se_nauciti": "Valorant",
-        "discord": "w",
-        "password": "nevem123"
+        "discord": "w"
+        
     }
+    
 ]

@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 import json
 #sigma
 app = Flask(__name__)
+app.secret_key = 'nekaj-zelo-tajnega'
 
 @app.route('/')
 def index():
@@ -77,9 +78,9 @@ def iskanje():
 
 @app.route('/login', methods=['GET', 'POST'])
 def prijava():
+
     if request.method == 'POST':
         vneseno_ime = request.form['ime']
-        vnesen_discord = request.form['discord']
         vneseno_geslo = request.form['geslo']
 
         try:
@@ -89,14 +90,19 @@ def prijava():
             uporabniki = []
 
         for u in uporabniki:
-            if u['ime'] == vneseno_ime and u['discord'] == vnesen_discord and u['password'] == vneseno_geslo:
+            if u['ime'] == vneseno_ime and u['password'] == vneseno_geslo:
+                session['uporabnik'] = vneseno_ime
                 return redirect('/profil/' + vneseno_ime)
 
         return "Uporabnik ni najden ali napačni podatki", 401
 
+
     return render_template('login.html')
 
-
+@app.route('/logout')
+def logout():
+    session.pop('uporabnik', None)
+    return redirect('/')
 @app.route('/profil/<ime>')
 def profil(ime):
     try:
