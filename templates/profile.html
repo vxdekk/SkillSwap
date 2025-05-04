@@ -61,6 +61,22 @@
         .logout-btn:hover {
             background-color: #b02a37;
         }
+
+        .video-list {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .video-list a {
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .video-list a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +86,21 @@
             <p><strong>Veščina, ki jo znaš:</strong> {{ uporabnik.znam }}</p>
             <p><strong>Veščina, ki se je želiš naučiti:</strong> {{ uporabnik.zelim_se_nauciti }}</p>
             <p><strong>Discord:</strong> {{ uporabnik.discord }}</p>
+        </div>
+
+        <div class="video-list">
+            <h3>📚 Priporočeni YouTube videi za učenje {{ uporabnik.zelim_se_nauciti }}:</h3>
+            {% if videi %}
+                <ul>
+                    {% for video in videi %}
+                        <li>
+                            <a href="{{ video.video_url }}" target="_blank">{{ video.naslov }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Žal nismo našli videov za to temo. Poskusi kasneje!</p>
+            {% endif %}
         </div>
 
         <a href="/">🏠 Nazaj na začetno stran</a>

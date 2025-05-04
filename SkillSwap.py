@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, redirect, session
 import json
+import requests
+from werkzeug.security import generate_password_hash, check_password_hash
 #sigma
 app = Flask(__name__)
 app.secret_key = 'nekaj-zelo-tajnega'
+YOUTUBE_API_KLJUC = 'AIzaSyAwAnuV__LH3lneUlREB-MdlcCOfw9CSNY'
+
 
 @app.route('/')
 def index():
@@ -35,10 +39,11 @@ def registracija():
 
         uporabnik = {
             "ime": request.form['name'],
+            "password": generate_password_hash(request.form['geslo']),
             "znam": znam,
             "zelim_se_nauciti": zelim_se_nauciti,
             "discord": request.form['discord'],
-            "password": request.form['geslo']
+            
 
         }
 
@@ -90,7 +95,8 @@ def prijava():
             uporabniki = []
 
         for u in uporabniki:
-            if u['ime'] == vneseno_ime and u['password'] == vneseno_geslo:
+            if u['ime'] == vneseno_ime and check_password_hash(u['password'], vneseno_geslo):
+
                 session['uporabnik'] = vneseno_ime
                 return redirect('/profil/' + vneseno_ime)
 
@@ -103,8 +109,10 @@ def prijava():
 def logout():
     session.pop('uporabnik', None)
     return redirect('/')
+
 @app.route('/profil/<ime>')
 def profil(ime):
+
     try:
         with open('users.json', 'r') as f:
             uporabniki = json.load(f)
@@ -113,9 +121,28 @@ def profil(ime):
 
     for u in uporabniki:
         if u['ime'] == ime:
-            return render_template('profile.html', uporabnik=u)
+            tema = u.get('zelim_se_nauciti', '')
+            videi = pridobi_youtube_videe(tema, YOUTUBE_API_KLJUC)
+            return render_template('profile.html', uporabnik=u, videi=videi)
+            
 
     return "Uporabnik ni najden", 404
+
+
+def pridobi_youtube_videe(tema, api_key):
+    url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=3&q=how+to+learn+{tema}&key={api_key}"
+    r = requests.get(url)
+    if r.status_code != 200:
+        return []
+    data = r.json()
+    return [
+        {
+            "naslov": v['snippet']['title'],
+            "video_url": f"https://www.youtube.com/watch?v={v['id']['videoId']}"
+
+        }
+        for v in data['items']
+    ]
 
 
 if __name__ == '__main__':

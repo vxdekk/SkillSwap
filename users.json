@@ -124,7 +124,6 @@
         "znam": "Programiranje",
         "zelim_se_nauciti": "Fotografija",
         "discord": "ana#1234"
-        
     },
     {
         "ime": "Ana",
@@ -132,7 +131,6 @@
         "znam": "Roblox",
         "zelim_se_nauciti": "Risanje",
         "discord": "ana#1234"
-        
     },
     {
         "ime": "Vid",
@@ -140,7 +138,13 @@
         "znam": "Kitaro",
         "zelim_se_nauciti": "Valorant",
         "discord": "w"
-        
-    }
+    },
     
+    {
+        "ime": "Vid",
+        "password": "scrypt:32768:8:1$SQJqGzSPosrrMXFc$4f5395b3350a5358b5a59d613cee84d197d076e6eb461bb57eba9ceec4005e437d3f3aac17eb5a09591a7c4b6c96dd3908b4419e5278db0af913302f4da80aa8",
+        "znam": "Programiranje",
+        "zelim_se_nauciti": "Programiranje",
+        "discord": "ww"
+    }
 ]
