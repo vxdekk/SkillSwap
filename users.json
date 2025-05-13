@@ -139,12 +139,53 @@
         "zelim_se_nauciti": "Valorant",
         "discord": "w"
     },
-    
     {
         "ime": "Vid",
         "password": "scrypt:32768:8:1$SQJqGzSPosrrMXFc$4f5395b3350a5358b5a59d613cee84d197d076e6eb461bb57eba9ceec4005e437d3f3aac17eb5a09591a7c4b6c96dd3908b4419e5278db0af913302f4da80aa8",
         "znam": "Programiranje",
         "zelim_se_nauciti": "Programiranje",
         "discord": "ww"
+    },
+    {
+        "ime": "Vid",
+        "password": "scrypt:32768:8:1$rhS20URpKpEhiUCy$09aaac4e312120de1d552812003414adcf3ed72d8ab086a5eb2347f591f8351a15c7ef9daffb8fbbc8d8733a4c182098be3b27581d88433aaaa1066a239eb3a9",
+        "znam": "sah",
+        "zelim_se_nauciti": "Roblox",
+        "discord": "erzen"
+    },
+    {
+        "ime": "Jaka",
+        "password": "scrypt:32768:8:1$bhKJhpTDOYvFOG2E$cc02d4ce1afe24f674653083c4ab1f8bd5dc7c172a802198347be4274d6a90e6e916303bf9bd9b3bc4beead63f3231d10a90fe6b1d7c0a09d7e536eb388264f6",
+        "znam": "Kitaro",
+        "zelim_se_nauciti": "Programiranje",
+        "discord": "jaka"
+    },
+    {
+        "ime": "w",
+        "password": "scrypt:32768:8:1$QaiC8UQmNyVm2evg$f2a62632b7cdbeaa6bbc31959a460419c9ad9524840ee0dee5e757f209ac9aad24b9949da74173d7256f09a4b82ee4ac4f477c98abd7ae75fd4a0e440f2865cc",
+        "znam": "Roblox",
+        "zelim_se_nauciti": "Fortnite",
+        "discord": "w"
+    },
+    {
+        "ime": "fortnite",
+        "password": "scrypt:32768:8:1$UwWBZClqjUC5Y0ZS$4ca889d1ed510f3ce5813d608326382067648dd592c96740039c6b770cf5b98a8cf066f1458665a31c2da55fa3f5960b0de8530a6a89c6c2ba3ba150532b8cc6",
+        "znam": "Jeziki",
+        "zelim_se_nauciti": "Fortnite",
+        "discord": "3"
+    },
+    {
+        "ime": "blazz",
+        "password": "scrypt:32768:8:1$n05rgtAytJ1rgbPZ$76d4f998d16f01244cc1428c66499236ad2f449b730ccc330fabf3fbc05dea2f28b13ec0d1df4c3d0f1761224c2e56e0b9eb4b2b0d2889472ff018260dc4ed10",
+        "znam": "dada",
+        "zelim_se_nauciti": "sah",
+        "discord": "erzen"
+    },
+    {
+        "ime": "Vid",
+        "password": "scrypt:32768:8:1$09BsB2O1vu4KuXwx$1190f6bacfa532ee0d16475efe564f755d899a27cd980b4d26ff83b5284a77c09e6c411330a97be2478397e08f26f4fe445286ad16b8fa5745ca15b5f5da82a9",
+        "znam": "Risanje",
+        "zelim_se_nauciti": "Kitaro",
+        "discord": "ee"
     }
 ]

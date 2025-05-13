@@ -110,7 +110,7 @@ def logout():
     session.pop('uporabnik', None)
     return redirect('/')
 
-@app.route('/profil/<ime>')
+@app.route('/profil/<ime>', methods=['GET', 'POST'])
 def profil(ime):
 
     try:
@@ -121,6 +121,13 @@ def profil(ime):
 
     for u in uporabniki:
         if u['ime'] == ime:
+            slika_url = None
+            if request.method == 'POST':
+                slika_url = request.form.get('slika_url')
+            if slika_url:
+                u['slika_url'] = slika_url
+                with open('users.json', 'w') as f:
+                    json.dump(uporabniki, f, indent = 4)
             tema = u.get('zelim_se_nauciti', '')
             videi = pridobi_youtube_videe(tema, YOUTUBE_API_KLJUC)
             return render_template('profile.html', uporabnik=u, videi=videi)
