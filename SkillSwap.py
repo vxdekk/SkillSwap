@@ -7,7 +7,7 @@ import webbrowser
 app = Flask(__name__)
 app.secret_key = 'nekaj-zelo-tajnega'
 YOUTUBE_API_KLJUC = 'AIzaSyAwAnuV__LH3lneUlREB-MdlcCOfw9CSNY'
-IMGUR_CLIENT_ID = '9d6c11cdc0508f1'
+
 
 
 @app.route('/')
@@ -124,6 +124,15 @@ def logout():
     session.pop('uporabnik', None)
     return redirect('/')
 
+def shorten_url(long_url):
+    api_url = 'http://tinyurl.com/api-create.php'
+    params = {'url': long_url}
+    r = requests.get(api_url, params=params)
+    if r.status_code == 200:
+        return r.text  
+    else:
+        return long_url  
+
 @app.route('/profil/<ime>', methods=['GET', 'POST'])
 def profil(ime):
 
@@ -138,7 +147,8 @@ def profil(ime):
             if request.method == 'POST':
                 prilepljen_url = request.form.get('slika_url')
                 if prilepljen_url:
-                    u['slika_url'] = prilepljen_url
+                    krajši_url = shorten_url(prilepljen_url)
+                    u['slika_url'] = krajši_url
                     with open('users.json', 'w') as f:
                         json.dump(uporabniki, f, indent=4)
 
