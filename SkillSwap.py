@@ -16,8 +16,8 @@ def index():
     if 'uporabnik' in session:
         ime = session['uporabnik']
         try:
-            with open('users.json', 'r') as f:
-                uporabniki = json.load(f)
+            with open('users.json', 'r') as seznam:
+                uporabniki = json.load(seznam)
             for u in uporabniki:
                 if u['ime'] == ime:
                     uporabnik = u
@@ -28,8 +28,8 @@ def index():
 
 def nalozi_skills():
     try:
-        with open('skills.json', 'r') as f:
-            return json.load(f)
+        with open('skills.json', 'r') as seznam:
+            return json.load(seznam)
     except FileNotFoundError:
         return []
 
@@ -185,12 +185,12 @@ def upload_image(image_url):
         "Authorization": f"Client-ID {IMGUR_CLIENT_ID}"
     }
 
-    payload = {
+    slika = {
         'image': image_url,
         'type': 'url'
     }
     
-    response = requests.post(url, headers=headers, data=payload)
+    response = requests.post(url, headers=headers, data=slika)
     
     if response.status_code == 200:
         data = response.json()['data']
