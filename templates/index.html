@@ -8,12 +8,22 @@
 </head>
 <body>
 
+    {% if uporabnik and uporabnik.slika_url %}
+    <a href="/profil/{{ uporabnik.ime }}" class="profile-pic-topright" title="Moj profil">
+        <img src="{{ uporabnik.slika_url }}" alt="Profilna slika {{ uporabnik.ime }}">
+    </a>
+    {% endif %}
+
     <!-- Navigacijski meni -->
     <nav>
         <a href="/">Domov</a>
         <a href="/register">Registracija</a>
         <a href="/search">Poišči učitelja</a>
-        <a href="/login">Prijava</a>
+        {% if uporabnik %}
+            <a href="/logout">Odjava</a>
+        {% else %}
+            <a href="/login">Prijava</a>
+        {% endif %}
     </nav>
 
     <!-- Glavna vsebina -->

@@ -2,15 +2,29 @@ from flask import Flask, render_template, request, redirect, session
 import json
 import requests
 from werkzeug.security import generate_password_hash, check_password_hash
+import webbrowser
 #sigma
 app = Flask(__name__)
 app.secret_key = 'nekaj-zelo-tajnega'
 YOUTUBE_API_KLJUC = 'AIzaSyAwAnuV__LH3lneUlREB-MdlcCOfw9CSNY'
+IMGUR_CLIENT_ID = '9d6c11cdc0508f1'
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    uporabnik = None
+    if 'uporabnik' in session:
+        ime = session['uporabnik']
+        try:
+            with open('users.json', 'r') as f:
+                uporabniki = json.load(f)
+            for u in uporabniki:
+                if u['ime'] == ime:
+                    uporabnik = u
+                    break
+        except FileNotFoundError:
+            pass
+    return render_template('index.html', uporabnik=uporabnik)
 
 def nalozi_skills():
     try:
@@ -121,13 +135,16 @@ def profil(ime):
 
     for u in uporabniki:
         if u['ime'] == ime:
-            slika_url = None
             if request.method == 'POST':
-                slika_url = request.form.get('slika_url')
-            if slika_url:
-                u['slika_url'] = slika_url
-                with open('users.json', 'w') as f:
-                    json.dump(uporabniki, f, indent = 4)
+                prilepljen_url = request.form.get('slika_url')
+                if prilepljen_url:
+                    u['slika_url'] = prilepljen_url
+                    with open('users.json', 'w') as f:
+                        json.dump(uporabniki, f, indent=4)
+
+                else:
+                    return f"Napaka pri nalaganju slike", 400
+                    
             tema = u.get('zelim_se_nauciti', '')
             videi = pridobi_youtube_videe(tema, YOUTUBE_API_KLJUC)
             return render_template('profile.html', uporabnik=u, videi=videi)
@@ -152,5 +169,29 @@ def pridobi_youtube_videe(tema, api_key):
     ]
 
 
+def upload_image(image_url):
+    url = "https://api.imgur.com/3/image"
+    headers = {
+        "Authorization": f"Client-ID {IMGUR_CLIENT_ID}"
+    }
+
+    payload = {
+        'image': image_url,
+        'type': 'url'
+    }
+    
+    response = requests.post(url, headers=headers, data=payload)
+    
+    if response.status_code == 200:
+        data = response.json()['data']
+        return {
+            'image_url': data['link'],
+            'delete_hash': data['deletehash']
+        }
+    else:
+        return {'error': response.text}
+
+
 if __name__ == '__main__':
+    webbrowser.open('http://127.0.0.1:5000')
     app.run(host = '0.0.0.0', port=5000)

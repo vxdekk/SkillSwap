@@ -88,6 +88,18 @@
             <p><strong>Discord:</strong> {{ uporabnik.discord }}</p>
         </div>
 
+    <form method="POST">
+        <label for="slika_url"><strong>Prilepi URL slike (npr. iz Imgur):</strong></label><br>
+        <input type="text" name="slika_url" placeholder="https://..." required style="width: 100%; padding: 8px; margin-top: 5px;"><br><br>
+        <button type="submit" style="padding: 10px 20px; background-color: #28a745; border: none; color: white; border-radius: 5px;">Naloži sliko</button>
+    </form>
+
+    {% if uporabnik.slika_url %}
+        <p><strong>Tvoja slika:</strong></p>
+        <img src="{{ uporabnik.slika_url }}" alt="Uporabniška slika" style="max-width: 100%; border-radius: 8px; margin-top: 10px;">
+    {% endif %}
+
+
         <div class="video-list">
             <h3>📚 Priporočeni YouTube videi za učenje {{ uporabnik.zelim_se_nauciti }}:</h3>
             {% if videi %}
